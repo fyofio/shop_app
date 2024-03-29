@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+</head>
+<body>
+    <h1>Edit a Product</h1>
+    <form action="/products/<%= product._id %>?_method=PUT" method="post">
+        <label for="name">Product Name</label>
+        <input type="text" name="name" id="name" value="<%= product.name %>">
+
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand" value="<%= product.brand %>">
+
+        <label for="color">Color</label>
+        <input type="text" name="color" id="color" value="<%= product.color %>">
+        
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price" value="<%= product.price %>">
+        
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="T-Shirt" <%= product.category == 'T-Shirt'? 'selected' : '' %>>T-Shirt</option>
+            <option value="Shirt" <%= product.category == 'Shirt'? 'selected' : '' %>>Shirt</option>
+            <option value="Pants" <%= product.category == 'Pants'? 'selected' : '' %>>Pants</option>
+            <option value="Socks" <%= product.category == 'Socks'? 'selected' : '' %>>Socks</option>
+            <option value="Hoodie" <%= product.category == 'Hoode'? 'selected' : '' %>>Hoodie</option>
+            <option value="Jeans" <%= product.category == 'Jeans'? 'selected' : '' %>>Jeans</option>
+            <option value="Dress" <%= product.category == 'Dress'? 'selected' : '' %>>Dress</option>
+            <option value="Shorts" <%= product.category == 'Shorts'? 'selected' : '' %>>Shorts</option>
+            <option value="Sweater" <%= product.category == 'Sweater'? 'selected' : '' %>>Sweater</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
